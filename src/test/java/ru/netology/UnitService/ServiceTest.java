@@ -1,40 +1,42 @@
 package ru.netology.UnitService;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import  org.junit.Assert.*;
+import  org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ServiceTest {
 
     @Test
-    public void shouldReturnIfAmountIs1000() {
+    public void shouldGiveChange1000() {
         Service service = new Service();
         int amount = 0;
 
         int actual = service.remain(amount);
         int expected = 1000;
 
-        Assert.assertEquals(actual,expected);
+        assertEquals(expected,actual);
     }
 
     @Test
-    public void shouldReturnIfAmountIs0() {
+    public void shouldGiveChange0() {
         Service service = new Service();
         int amount = 1000;
 
         int actual = service.remain(amount);
         int expected = 0;
 
-        Assert.assertEquals(actual,expected);
+        assertEquals(expected,actual);
     }
 
     @Test
-    public void shouldReturnIfAmountIs667() {
+    public void shouldGiveChange667() {
         Service service = new Service();
         int amount = 333;
 
         int actual = service.remain(amount);
         int expected = 667;
 
-        Assert.assertEquals(actual,expected);
+        assertEquals(expected,actual);
     }
 }
